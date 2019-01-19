@@ -21,8 +21,12 @@ export class AddTodo extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-          <input type="text" name="title" placeholder="Add Todo" value={this.state.title} onChange={this.onChange} />
-          <input type="submit" value="Submit" />
+        <div class="input-group mb-3">
+          <input type="text" className="form-control" name="title" placeholder="Add Todo" value={this.state.title} onChange={this.onChange} />
+          <div className="input-group-append">
+            <button type="submit" className="btn btn-warning">Submit</button>
+          </div>
+        </div>
       </form>
     )
   }

@@ -40,16 +40,26 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <Header />
-          <Route exact path="/" render={props =>(
-            <React.Fragment>
-              <AddTodo addTodo={this.addTodo} />
-              <Todos todos={this.state.todos} markComplete={this.markComplete} deleteTodo={this.deleteTodo} />
-            </React.Fragment>
-          )} />
-          <Route path="/about" component={About} />
-          
+        <div className="container">
+        <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+              <Header />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+                <Route exact path="/" render={props =>(
+                  <React.Fragment>
+                    <div style={{paddingTop: "30px"}}>
+                      <AddTodo addTodo={this.addTodo} />
+                    </div>
+                    <Todos todos={this.state.todos} markComplete={this.markComplete} deleteTodo={this.deleteTodo} />
+                    <br /><br />
+                  </React.Fragment>
+                )} />
+                <Route path="/about" component={About} />
+            </div>
+          </div>  
         </div>
       </Router>
     );

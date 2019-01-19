@@ -2,9 +2,11 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div>
-      <h1>About</h1>
-      <p>This is the todo app v1.0. It is part of a react crash course.</p>
+    <div className="card"  style={{textAlign: "center",marginTop: "30px"}}>
+        <div className="card-header">
+        <h3>About</h3>
+        </div>
+        <p style={{paddingTop:"30px", paddingBottom: "20px"}}>This is the todo app v1.0. It was created as part of a ReactJS crash course.</p>
     </div>
   )
 }

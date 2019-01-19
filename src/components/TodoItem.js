@@ -5,22 +5,26 @@ export class TodoItem extends Component {
 
   getStyle = () => {
     return {
-      background: '#f4f4f4',
-      padding: '10px',
-      borderBottom: '1px #ccc solid',
-      textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+      textDecoration: this.props.todo.completed ? 'line-through' : 'none',
+      color: this.props.todo.completed ? 'grey' : '#000000'
     }
   }
 
   render() {
     const {id, title, completed} = this.props.todo;
     return (
-      <div style={this.getStyle()}>
-        <p>
-          <input type="checkbox" checked={completed} onChange={this.props.markComplete.bind(this, id)} />
-          { title }
-          <button style={btnStyle} onClick={this.props.deleteTodo.bind(this, id)}>X</button>
-        </p>
+      <div style={{width: "100%", padding: '5px 0'}}>
+        <div class="input-group">
+          <div className="input-group-prepend">
+            <div className="input-group-text" style={{marginRight: "-3px", zIndex: "5"}}>
+              <input type="checkbox" checked={completed} onChange={this.props.markComplete.bind(this, id)} />
+            </div>
+          </div>
+          <input className="form-control" name="title" placeholder="Add Todo" value={title} style={this.getStyle()}/>
+          <div className="input-group-append">
+            <button  className="btn btn-danger" onClick={this.props.deleteTodo.bind(this, id)}>X</button>
+          </div>
+        </div>
       </div>
     )
   }
