@@ -13,7 +13,7 @@ state={
     {
       id: 2,
       title: 'Meet someone else',
-      completed: false
+      completed: true
     },
     {
       id: 3,
